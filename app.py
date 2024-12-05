@@ -2,6 +2,7 @@ import streamlit as st
 import numpy as np
 from sklearn.linear_model import LinearRegression
 import plotly.graph_objects as go
+import pandas as pd
 
 # Page Config
 st.set_page_config(page_title="Sales Predictor", layout="wide", initial_sidebar_state="collapsed")
@@ -112,6 +113,34 @@ categorias = {
     }
 }
 
+# Datos de productos más vendidos
+productos_top = {
+    'Octubre': [
+        {'Producto': 'iPhone 13', 'Unidades': 85, 'Ingresos': 85000},
+        {'Producto': 'Samsung TV 55"', 'Unidades': 65, 'Ingresos': 52000},
+        {'Producto': 'PlayStation 5', 'Unidades': 55, 'Ingresos': 27500},
+        {'Producto': 'MacBook Air', 'Unidades': 45, 'Ingresos': 49500},
+        {'Producto': 'Xiaomi Mi 11', 'Unidades': 50, 'Ingresos': 25000},
+        {'Producto': 'Samsung Galaxy S21', 'Unidades': 45, 'Ingresos': 40500},
+        {'Producto': 'Nintendo Switch', 'Unidades': 40, 'Ingresos': 12000},
+        {'Producto': 'Sony WH-1000XM4', 'Unidades': 35, 'Ingresos': 10500},
+        {'Producto': 'Xbox Series X', 'Unidades': 30, 'Ingresos': 15000},
+        {'Producto': 'Dell XPS 13', 'Unidades': 30, 'Ingresos': 36000}
+    ],
+    'Noviembre': [
+        {'Producto': 'iPhone 13', 'Unidades': 95, 'Ingresos': 95000},
+        {'Producto': 'Samsung TV 55"', 'Unidades': 70, 'Ingresos': 56000},
+        {'Producto': 'iPad Pro', 'Unidades': 60, 'Ingresos': 48000},
+        {'Producto': 'MacBook Air', 'Unidades': 55, 'Ingresos': 60500},
+        {'Producto': 'Google Pixel 6', 'Unidades': 52, 'Ingresos': 36400},
+        {'Producto': 'LG OLED TV 65"', 'Unidades': 48, 'Ingresos': 96000},
+        {'Producto': 'Nintendo Switch', 'Unidades': 45, 'Ingresos': 13500},
+        {'Producto': 'Bose QuietComfort', 'Unidades': 35, 'Ingresos': 10500},
+        {'Producto': 'Xbox Series X', 'Unidades': 30, 'Ingresos': 15000},
+        {'Producto': 'Lenovo ThinkPad X1', 'Unidades': 30, 'Ingresos': 45000}
+    ]
+}
+
 # Layout
 col1, col2 = st.columns([1, 2])
 
@@ -216,4 +245,26 @@ with metric_cols[1]:
     st.metric("Conversión", "3.4%", "0.8%")
 with metric_cols[2]:
     st.metric("Satisfaction", "94%", "2.3%")
+st.markdown("</div>", unsafe_allow_html=True)
+
+# Tabla de productos más vendidos
+st.markdown("<div class='dashboard-card'>", unsafe_allow_html=True)
+st.markdown("<h2>🏆 Top 10 Productos Más Vendidos</h2>", unsafe_allow_html=True)
+tab1, tab2 = st.tabs(["Octubre", "Noviembre"])
+
+with tab1:
+    df_octubre = pd.DataFrame(productos_top['Octubre'])
+    df_octubre.index = range(1, len(df_octubre) + 1)  # Índice desde 1
+    st.table(df_octubre.style.format({
+        'Ingresos': '${:,.0f}',
+        'Unidades': '{:,.0f}'
+    }))
+
+with tab2:
+    df_noviembre = pd.DataFrame(productos_top['Noviembre'])
+    df_noviembre.index = range(1, len(df_noviembre) + 1)  # Índice desde 1
+    st.table(df_noviembre.style.format({
+        'Ingresos': '${:,.0f}',
+        'Unidades': '{:,.0f}'
+    }))
 st.markdown("</div>", unsafe_allow_html=True)
