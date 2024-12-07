@@ -92,52 +92,52 @@ prediccion_diciembre = modelo.predict(np.array([[12]]))[0]
 # Datos de ventas por categoría
 categorias = {
     'Electrónicos': {
-        'Octubre': 150,
-        'Noviembre': 180
+        'Octubre': 50,
+        'Noviembre': 55
     },
     'Televisores': {
-        'Octubre': 120,
-        'Noviembre': 130
+        'Octubre': 45,
+        'Noviembre': 50
     },
     'Computadoras y Laptops': {
-        'Octubre': 90,
-        'Noviembre': 95
+        'Octubre': 40,
+        'Noviembre': 45
     },
     'Cámaras y Fotografía': {
-        'Octubre': 70,
-        'Noviembre': 65
+        'Octubre': 65,
+        'Noviembre': 70.32    # 65 + 4.2%
     },
     'Videojuegos y Consolas': {
-        'Octubre': 50,
-        'Noviembre': 50
+        'Octubre': 30,
+        'Noviembre': 35
     }
 }
 
 # Datos de productos más vendidos
 productos_top = {
     'Octubre': [
-        {'Producto': 'iPhone 13', 'Unidades': 85, 'Ingresos': 85000},
-        {'Producto': 'Samsung TV 55"', 'Unidades': 65, 'Ingresos': 52000},
-        {'Producto': 'PlayStation 5', 'Unidades': 55, 'Ingresos': 27500},
-        {'Producto': 'MacBook Air', 'Unidades': 45, 'Ingresos': 49500},
-        {'Producto': 'Xiaomi Mi 11', 'Unidades': 50, 'Ingresos': 25000},
-        {'Producto': 'Samsung Galaxy S21', 'Unidades': 45, 'Ingresos': 40500},
-        {'Producto': 'Nintendo Switch', 'Unidades': 40, 'Ingresos': 12000},
-        {'Producto': 'Sony WH-1000XM4', 'Unidades': 35, 'Ingresos': 10500},
-        {'Producto': 'Xbox Series X', 'Unidades': 30, 'Ingresos': 15000},
-        {'Producto': 'Dell XPS 13', 'Unidades': 30, 'Ingresos': 36000}
+        {'Producto': 'iPhone 13', 'Unidades': 15, 'Ingresos': 15000},
+        {'Producto': 'Samsung TV 55"', 'Unidades': 12, 'Ingresos': 9600},
+        {'Producto': 'PlayStation 5', 'Unidades': 10, 'Ingresos': 5000},
+        {'Producto': 'MacBook Air', 'Unidades': 8, 'Ingresos': 8800},
+        {'Producto': 'Xiaomi Mi 11', 'Unidades': 7, 'Ingresos': 3500},
+        {'Producto': 'Samsung Galaxy S21', 'Unidades': 6, 'Ingresos': 5400},
+        {'Producto': 'Nintendo Switch', 'Unidades': 5, 'Ingresos': 1500},
+        {'Producto': 'Sony WH-1000XM4', 'Unidades': 4, 'Ingresos': 1200},
+        {'Producto': 'Xbox Series X', 'Unidades': 3, 'Ingresos': 1500},
+        {'Producto': 'Dell XPS 13', 'Unidades': 2, 'Ingresos': 2400}
     ],
     'Noviembre': [
-        {'Producto': 'iPhone 13', 'Unidades': 95, 'Ingresos': 95000},
-        {'Producto': 'Samsung TV 55"', 'Unidades': 70, 'Ingresos': 56000},
-        {'Producto': 'iPad Pro', 'Unidades': 60, 'Ingresos': 48000},
-        {'Producto': 'MacBook Air', 'Unidades': 55, 'Ingresos': 60500},
-        {'Producto': 'Google Pixel 6', 'Unidades': 52, 'Ingresos': 36400},
-        {'Producto': 'LG OLED TV 65"', 'Unidades': 48, 'Ingresos': 96000},
-        {'Producto': 'Nintendo Switch', 'Unidades': 45, 'Ingresos': 13500},
-        {'Producto': 'Bose QuietComfort', 'Unidades': 35, 'Ingresos': 10500},
-        {'Producto': 'Xbox Series X', 'Unidades': 30, 'Ingresos': 15000},
-        {'Producto': 'Lenovo ThinkPad X1', 'Unidades': 30, 'Ingresos': 45000}
+        {'Producto': 'iPhone 13', 'Unidades': 18, 'Ingresos': 18000},
+        {'Producto': 'Samsung TV 55"', 'Unidades': 14, 'Ingresos': 11200},
+        {'Producto': 'iPad Pro', 'Unidades': 12, 'Ingresos': 9600},
+        {'Producto': 'MacBook Air', 'Unidades': 10, 'Ingresos': 11000},
+        {'Producto': 'Google Pixel 6', 'Unidades': 8, 'Ingresos': 5600},
+        {'Producto': 'LG OLED TV 65"', 'Unidades': 7, 'Ingresos': 14000},
+        {'Producto': 'Nintendo Switch', 'Unidades': 6, 'Ingresos': 1800},
+        {'Producto': 'Bose QuietComfort', 'Unidades': 5, 'Ingresos': 1500},
+        {'Producto': 'Xbox Series X', 'Unidades': 4, 'Ingresos': 2000},
+        {'Producto': 'Lenovo ThinkPad X1', 'Unidades': 3, 'Ingresos': 4500}
     ]
 }
 
