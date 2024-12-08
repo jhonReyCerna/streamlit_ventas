@@ -4,7 +4,7 @@ from sklearn.linear_model import LinearRegression
 import plotly.graph_objects as go
 import pandas as pd
 
-# Page Config
+# Page Configwqwefqwd
 st.set_page_config(page_title="Sales Predictor", layout="wide", initial_sidebar_state="collapsed")
 
 # Modern Bright Custom Styling
